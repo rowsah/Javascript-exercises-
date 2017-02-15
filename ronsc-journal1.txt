@@ -1,0 +1,13 @@
+Javascript course expectations:
+
+I just want to be able to build a foundation that will set me in the right direction. I know most of my learning will happen based on what I choose to do so I’m hoping this course will give me confidence to go for those things.
+
+
+instructor speed:
+
+I like the speed and the fact that we’re using comments and getting to ask a lot of questions
+
+
+what would you like to learn: 
+
+I’d like to learn how to make javascript interact with the foundations we’ve built in css/html. 
