@@ -1,4 +1,10 @@
-  function loadProvinces(){
+// Nice work Ron!  Your application functions as required and has the separate html and js files that I needed to see.
+// You have most things named correctly - I just missed cboProv (you named it 'province')  Also, I didn't see any comments
+// in either file (that was an easy mark)  :-)  Otherwise everything was great.  Fix these issues, check it back in
+// (and let me know when you do), and I'll give you a 9.
+// 8/10
+
+function loadProvinces(){
     var provArray = ["Ontario", "British Columbia", "Quebec", "Alberta", "Saskatchewan", "Nova Scotia", "Newfoundland and Labrador", "Manitoba", "New Brunswick", "Prince Edward Island"];
 
 var provinceOutput = "<option value=''> - Select - </option>";
