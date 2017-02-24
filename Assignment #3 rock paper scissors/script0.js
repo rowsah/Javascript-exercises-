@@ -1,4 +1,11 @@
-
+// Nice work, Ron.  Your application works well
+// and you've followed all the requirements.  I did have a
+// concern about the requirement around having the
+// 'getRandomeGamePiece()'' take a parameter - so it should
+// have looked like this 'getRandomGamePiec(arrayLength)', but
+// I saw you had another function that was named different but did
+// exactly that.  That will suffice.  Well done.
+// 10/10
 
 
 
