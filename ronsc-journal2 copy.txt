@@ -11,3 +11,11 @@ Any suggestions on how I can grasp js better? Maybe I’m overcomplicating it.
 Otherwise its going well. Just wish I understood better, but I’m impatient sometimes as well .
 
 Thanks!
+
+Hi Ron,
+Good to hear!  :-)
+Honestly, I think that the more practice and familiar you get with Javascript, the
+more comfortable you’ll feel.  My suggestion for you to grasp it better would be to 
+keep practicing and fooling around with it.  The more you do, the more things
+will click and the more you’ll be able to pick up too.
+Perry
