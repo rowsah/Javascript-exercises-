@@ -1,0 +1,147 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script>
+
+    var returnDate = /\d\d-\d\d-\d\d\d\d/;
+
+function results(){         //results function to hold my validate init and clearform in total.
+  validate()                //ill call this in my submit html
+  init()
+  clearForm()
+}
+
+function clearForm(){   //cleared my form with submit. figured out i needed to reference the whole form and use "reset"
+  document.getElementById("libraryForm").reset();
+
+
+}
+
+
+        function validate() {             //validating my title, date, and author to see if they fit criteria
+
+
+            // check to see if the entered data is good (or if there
+            // is any...
+            if(document.getElementById("txtTitle").value==""){
+              alert("please enter a title");
+              document.getElementById('txtTitle').focus();
+
+            }
+            if(document.getElementById('txtTitle').value.length>=70){
+                alert("Please ensure the title of this book is less then 70 characters");
+                document.getElementById('txtTitle').focus();
+                return false;
+
+            }
+            if(document.getElementById("txtAuthor").value==""){
+              alert("please enter Author name");
+              document.getElementById('txtAuthor').focus();
+
+            }
+
+            if(document.getElementById("txtDate").value==""){
+              alert("please enter a return date");
+              document.getElementById('txtDate').focus();
+
+            }
+
+            if(!returnDate.test(document.getElementById('txtDate').value)){
+                alert("Please enter a valid return date with the format 12-12-1234");
+                document.getElementById('txtDate').focus();
+                return false;
+            }
+
+
+            if(!getCheckedValue("btnArray1")){   // the '!' (bang) says 'make true = false'
+                // if that validation fails...
+                document.getElementById("btnFiction").focus();        //throwing focus back onto my radio button if nothing is checked
+                alert("please select a genre");
+                return false;  // stop the submit of the form
+            }
+
+            function getCheckedValue(elementName){       //looping through my radio buttons to see if something has been checked.
+                // has something/some value been selected??
+                // created a variable to hold true or false if some has been selected
+                var selected = false;
+
+                var btnArray = document.getElementsByName(elementName);
+
+
+                for(index=0;index<btnArray.length;index++){
+
+                    if(btnArray[index].checked){
+
+                        selected = true;
+                    }
+                }
+                return selected;
+}
+            }
+
+              function init() {    //this is what i want to show in my textArea.
+
+
+                $(document).ready(function(){
+
+                  document.getElementById("output").value = "Author:" + document.getElementById('txtAuthor').value + "     " + "Title:" + document.getElementById('txtTitle').value
+                 + "           " + "Date:" + document.getElementById('txtDate').value + "        " + "Genre:" + ($('input[type=radio]:checked').val());
+
+               })
+                        //use jquery to grab radio button element value
+}
+
+
+
+    </script>
+</head>
+
+<body>
+    <h3>Library Check Out Proof Of Concept</h3>
+    <form id="libraryForm">
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td>
+                    <input name="txtTitle" id="txtTitle" name="txtTitle" />
+                </td>
+            </tr>
+            <tr>
+                <td>Author:</td>
+                <td>
+                    <input name="txtAuthor" id="txtAuthor" name="txtAuthor" />
+                </td>
+            </tr>
+            <tr>
+                <td>Return Date:</td>
+                <td>
+                    <input name="txtDate" id="txtDate" name="txtDate" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Book Type</td>
+                <td>
+                    <input type="radio" name="btnArray1" id="btnFiction" value="Fiction" />
+                    <label for="btnFiction">Fiction</label>
+                    <input type="radio" name="btnArray1" id="btnNonFiction" value="Non-Fiction" />
+                    <label for="btnNonFiction">Non-Fiction</label>
+                    <input type="radio" name="btnArray1" id="btnPeriodical" value="Periodical" />
+                    <label for="btnPeriodical">Periodical</label>
+
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+    </form>
+    <button onclick ="results()">Check Out</button>
+    <br/>
+    <br/>
+    <textarea name="txtOutput" id="output" rows="10" columns="200">
+    </textarea>
+</body>
+
+</html>
